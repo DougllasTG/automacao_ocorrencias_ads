@@ -123,7 +123,7 @@ const casesNotes = () => {
   };
 
   // Aplicação de estilos
-  createStyle('./assets/css/style.css');
+  createStyle('https://tools-automate.github.io/escala/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
   // Aplica dragElement no elemeto notes
@@ -162,7 +162,7 @@ const casesNotes = () => {
 };
 
 const structureHTML = fetch(
-  './assets/html/estrutura.html',
+  'https://tools-automate.github.io/escala/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
   notes.innerHTML = e;
