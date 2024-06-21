@@ -51,7 +51,7 @@
 
 /* Ícone dentro da caixa de notas minimizada */
 #escala.escala-minimize::before {
-  content: 'edit_note';
+  content: 'schedule';
   box-shadow: -1px -1px 4px 1px #a1a1a1;
   font-size: 40px;
   color: #fff;
