@@ -123,7 +123,7 @@ const casesescala = () => {
   };
 
   // Aplicação de estilos
-  createStyle('https://tools-automate.github.io/escala/assets/css/style.css');
+  createStyle('https://tools-automate.github.io/escala-ocorrencia/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
   // Aplica dragElement no elemeto escala
@@ -162,7 +162,7 @@ const casesescala = () => {
 };
 
 const structureHTML = fetch(
-  'https://tools-automate.github.io/escala/assets/html/estrutura.html',
+  'https://tools-automate.github.io/escala-ocorrencia/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
   escala.innerHTML = e;
