@@ -4,12 +4,12 @@
 //   createScriptURL: (string) => string,
 //   createScript: (string) => string,
 // });
-// const notes = document.createElement('notes');
-// document.body.appendChild(notes);
-// notes.id = 'notes';
-// notes.classList.add('material-icons', 'notes-minimize');
+// const escala = document.createElement('escala');
+// document.body.appendChild(escala);
+// escala.id = 'escala';
+// escala.classList.add('material-icons', 'escala-minimize');
 
-const casesNotes = () => {
+const casesescala = () => {
 
 
   //Função para criar folha de estilo css a aplicar no head
@@ -126,36 +126,36 @@ const casesNotes = () => {
   createStyle('https://tools-automate.github.io/escala/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-  // Aplica dragElement no elemeto notes
-  dragElement(notes);
+  // Aplica dragElement no elemeto escala
+  dragElement(escala);
 
   // Aplica função resizeWindow
-  resizeWindow(notes);
+  resizeWindow(escala);
 
-  // Obtém todos os elementos que possuem a classe 'minimize' ou 'notes-minimize' e adiciona o ouvinte de evento a cada um deles
+  // Obtém todos os elementos que possuem a classe 'minimize' ou 'escala-minimize' e adiciona o ouvinte de evento a cada um deles
   const minimizeWindowElements = document.querySelectorAll(
     '[class*="minimize"]',
   );
   minimizeWindowElements.forEach((e) => {
     e.addEventListener('click', (e) => {
-      if (e.target.matches('.notes-minimize')) {
-        e.target.classList.remove('notes-minimize');
+      if (e.target.matches('.escala-minimize')) {
+        e.target.classList.remove('escala-minimize');
         e.target.classList.remove('material-icons');
       }
       if (e.target.matches('.minimize')) {
-        notes.classList.add('notes-minimize');
-        notes.classList.add('material-icons');
+        escala.classList.add('escala-minimize');
+        escala.classList.add('material-icons');
       }
     });
   });
 
-  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento notes
+  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento escala
   document.querySelector('#dark-mode').addEventListener('click', (e) => {
-    if (notes.classList.contains('dark-theme')) {
-      notes.classList.remove('dark-theme');
+    if (escala.classList.contains('dark-theme')) {
+      escala.classList.remove('dark-theme');
       e.target.textContent = 'dark_mode';
     } else {
-      notes.classList.add('dark-theme');
+      escala.classList.add('dark-theme');
       e.target.textContent = 'light_mode';
     }
   });
@@ -165,7 +165,7 @@ const structureHTML = fetch(
   'https://tools-automate.github.io/escala/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
-  notes.innerHTML = e;
-  casesNotes();
+  escala.innerHTML = e;
+  casesescala();
   console.log('HTML aplicado!');
 });
