@@ -51,7 +51,7 @@
 
 /* Ícone dentro da caixa de notas minimizada */
 #escala.escala-minimize::before {
-  content: 'timer';
+  content: 'description';
   box-shadow: -1px -1px 4px 1px #a1a1a1;
   font-size: 40px;
   color: #fff;
@@ -158,7 +158,6 @@
 #escala > .all-content > [id^='content-'] {
   height: 100%;
   background-color: var(--color-white);
-  padding: 40px;
 }
 
 #escala > .all-content > [id^='content-'] > .card {
