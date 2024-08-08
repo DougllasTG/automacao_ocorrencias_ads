@@ -1,4 +1,4 @@
-const casesadherence = () => {
+const casesescala = () => {
 
   //Função para criar folha de estilo css a aplicar no head
   const createStyle = (atribute) => {
@@ -117,11 +117,11 @@ const casesadherence = () => {
   createStyle('https://tools-automate.github.io/escala-ocorrencia/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-  // Aplica dragElement no elemeto adherence
-  dragElement(adherence);
+  // Aplica dragElement no elemeto escala
+  dragElement(escala);
 
   // Aplica função resizeWindow
-  resizeWindow(adherence);
+  resizeWindow(escala);
 
   // Chamada de Ouvintes
   // Obtém todos os botões das abas e adiciona o ouvinte de evento a cada um deles
@@ -136,31 +136,31 @@ const casesadherence = () => {
     });
   });
 
-  // Obtém todos os elementos que possuem a classe 'minimize' ou 'adherence-minimize' e adiciona o ouvinte de evento a cada um deles
+  // Obtém todos os elementos que possuem a classe 'minimize' ou 'escala-minimize' e adiciona o ouvinte de evento a cada um deles
   const minimizeWindowElements = document.querySelectorAll(
     '[class*="minimize"]',
   );
   minimizeWindowElements.forEach((e) => {
     e.addEventListener('click', (e) => {
-      if (e.target.matches('.adherence-minimize')) {
-        e.target.classList.remove('adherence-minimize');
+      if (e.target.matches('.escala-minimize')) {
+        e.target.classList.remove('escala-minimize');
         e.target.classList.remove('material-icons');
       }
       if (e.target.matches('.minimize')) {
-        adherence.classList.add('adherence-minimize');
-        adherence.classList.add('material-icons');
+        escala.classList.add('escala-minimize');
+        escala.classList.add('material-icons');
       }
     });
   });
 
 
-  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento adherence
+  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento escala
   document.querySelector('#dark-mode').addEventListener('click', (e) => {
-    if (adherence.classList.contains('dark-theme')) {
-      adherence.classList.remove('dark-theme');
+    if (escala.classList.contains('dark-theme')) {
+      escala.classList.remove('dark-theme');
       e.target.textContent = 'dark_mode';
     } else {
-      adherence.classList.add('dark-theme');
+      escala.classList.add('dark-theme');
       e.target.textContent = 'light_mode';
     }
   });
@@ -172,7 +172,7 @@ const structureHTML = fetch(
   'https://tools-automate.github.io/escala-ocorrencia/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
-  adherence.innerHTML = e;
-  casesadherence();
+  escala.innerHTML = e;
+  casesescala();
   console.log('HTML aplicado!');
 });
