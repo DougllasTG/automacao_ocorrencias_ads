@@ -1,16 +1,4 @@
-// use tests in console
-// escapeHTMLPolicy = trustedTypes.createPolicy('default', {
-//   createHTML: (string) => string,
-//   createScriptURL: (string) => string,
-//   createScript: (string) => string,
-// });
-// const escala = document.createElement('escala');
-// document.body.appendChild(escala);
-// escala.id = 'escala';
-// escala.classList.add('material-icons', 'escala-minimize');
-
-const casesescala = () => {
-
+const casesadherence = () => {
 
   //Função para criar folha de estilo css a aplicar no head
   const createStyle = (atribute) => {
@@ -122,50 +110,69 @@ const casesescala = () => {
     }
   };
 
+
+  // Chamadas de Funções
   // Aplicação de estilos
+
   createStyle('https://tools-automate.github.io/escala-ocorrencia/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-  // Aplica dragElement no elemeto escala
-  dragElement(escala);
+  // Aplica dragElement no elemeto adherence
+  dragElement(adherence);
 
   // Aplica função resizeWindow
-  resizeWindow(escala);
+  resizeWindow(adherence);
 
-  // Obtém todos os elementos que possuem a classe 'minimize' ou 'escala-minimize' e adiciona o ouvinte de evento a cada um deles
+  // Chamada de Ouvintes
+  // Obtém todos os botões das abas e adiciona o ouvinte de evento a cada um deles
+  const tabsButtons = document.querySelectorAll('[data-abas]');
+  tabsButtons.forEach((tabButton) => {
+    tabButton.addEventListener('click', () => {
+      const tabId = tabButton.getAttribute('data-abas');
+      console.log(tabId);
+
+      // Chama a função para controlar a exibição do conteúdo
+      handleTabClick(tabId);
+    });
+  });
+
+  // Obtém todos os elementos que possuem a classe 'minimize' ou 'adherence-minimize' e adiciona o ouvinte de evento a cada um deles
   const minimizeWindowElements = document.querySelectorAll(
     '[class*="minimize"]',
   );
   minimizeWindowElements.forEach((e) => {
     e.addEventListener('click', (e) => {
-      if (e.target.matches('.escala-minimize')) {
-        e.target.classList.remove('escala-minimize');
+      if (e.target.matches('.adherence-minimize')) {
+        e.target.classList.remove('adherence-minimize');
         e.target.classList.remove('material-icons');
       }
       if (e.target.matches('.minimize')) {
-        escala.classList.add('escala-minimize');
-        escala.classList.add('material-icons');
+        adherence.classList.add('adherence-minimize');
+        adherence.classList.add('material-icons');
       }
     });
   });
 
-  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento escala
+
+  // Adiciona um ouvinte de clique para o elemento com ID 'dark-mode' e liga e desliga a a classe dark-theme do elemento adherence
   document.querySelector('#dark-mode').addEventListener('click', (e) => {
-    if (escala.classList.contains('dark-theme')) {
-      escala.classList.remove('dark-theme');
+    if (adherence.classList.contains('dark-theme')) {
+      adherence.classList.remove('dark-theme');
       e.target.textContent = 'dark_mode';
     } else {
-      escala.classList.add('dark-theme');
+      adherence.classList.add('dark-theme');
       e.target.textContent = 'light_mode';
     }
   });
 };
 
+
+
 const structureHTML = fetch(
   'https://tools-automate.github.io/escala-ocorrencia/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
-  escala.innerHTML = e;
-  casesescala();
+  adherence.innerHTML = e;
+  casesadherence();
   console.log('HTML aplicado!');
 });
