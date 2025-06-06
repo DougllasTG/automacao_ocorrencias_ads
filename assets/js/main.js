@@ -114,7 +114,7 @@ const casesescala = () => {
   // Chamadas de Funções
   // Aplicação de estilos
 
-  createStyle('https://tools-automate.github.io/escala-ocorrencia/assets/css/style.css');
+  createStyle('https://dougllastg.github.io/automacao_ocorrencias_ads/assets/css/style.css');
   createStyle('https://fonts.googleapis.com/icon?family=Material+Icons');
 
   // Aplica dragElement no elemeto escala
@@ -169,7 +169,7 @@ const casesescala = () => {
 
 
 const structureHTML = fetch(
-  'https://tools-automate.github.io/escala-ocorrencia/assets/html/estrutura.html',
+  'https://dougllastg.github.io/automacao_ocorrencias_ads/assets/html/estrutura.html',
 ).then((e) => e.text());
 structureHTML.then((e) => {
   escala.innerHTML = e;
